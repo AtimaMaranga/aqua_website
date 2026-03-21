@@ -1,0 +1,105 @@
+backend:
+  name: github
+  repo: AtimaMaranga/aqua_website
+  branch: main
+
+media_folder: "assets/img"
+public_folder: "/assets/img"
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "_posts/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Author", name: "author", widget: "string", default: "Admin" }
+      - { label: "Featured Image", name: "image", widget: "image" }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options: ["Water Projects", "Community Response", "Agriculture", "Partnerships"]
+
+  - name: "events"
+    label: "Events"
+    folder: "_posts/events"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Event Date", name: "event_date", widget: "datetime" }
+      - { label: "Start Time", name: "start_time", widget: "string", default: "9:00 AM" }
+      - { label: "End Time", name: "end_time", widget: "string", default: "4:00 PM" }
+      - { label: "Location", name: "location", widget: "string" }
+      - { label: "Featured Image", name: "image", widget: "image" }
+      - { label: "Description", name: "body", widget: "markdown" }
+      - label: "Status"
+        name: "status"
+        widget: "select"
+        options: ["upcoming", "past"]
+        default: "upcoming"
+
+  - name: "projects"
+    label: "Projects"
+    folder: "_posts/projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Location", name: "location", widget: "string" }
+      - { label: "Date", name: "date", widget: "string" }
+      - { label: "Featured Image", name: "image", widget: "image" }
+      - { label: "Description", name: "body", widget: "markdown" }
+
+  - name: "gallery"
+    label: "Gallery"
+    folder: "_posts/gallery"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Caption", name: "caption", widget: "string" }
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options: ["water", "community", "team"]
+
+  - name: "team"
+    label: "Team Members"
+    folder: "_posts/team"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Name", name: "title", widget: "string" }
+      - { label: "Role", name: "role", widget: "string" }
+      - { label: "Photo", name: "image", widget: "image" }
+      - { label: "Bio", name: "body", widget: "markdown" }
+      - { label: "Twitter", name: "twitter", widget: "string", required: false }
+      - { label: "LinkedIn", name: "linkedin", widget: "string", required: false }
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Home Page"
+        name: "home"
+        file: "_data/home.yml"
+        fields:
+          - { label: "Hero Heading", name: "hero_heading", widget: "string" }
+          - { label: "Hero Subtext", name: "hero_subtext", widget: "text" }
+          - { label: "People Helped", name: "stat_people", widget: "number" }
+          - { label: "Projects Done", name: "stat_projects", widget: "number" }
+          - { label: "Years Active", name: "stat_years", widget: "number" }
+          - { label: "Team Members", name: "stat_team", widget: "number" }
+      - label: "About Page"
+        name: "about"
+        file: "_data/about.yml"
+        fields:
+          - { label: "Story Text", name: "story", widget: "markdown" }
+          - { label: "Vision", name: "vision", widget: "text" }
+          - { label: "Mission", name: "mission", widget: "text" }
+          - { label: "Purpose", name: "purpose", widget: "text" }
