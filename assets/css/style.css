@@ -130,7 +130,7 @@ h1,h2,h3,h4{font-family:var(--disp);margin:0;line-height:1;letter-spacing:-.02em
 .topbar .tb-right{display:flex;gap:14px;align-items:center}
 .topbar .tb-right a{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,.12)}
 .topbar svg{width:13px;height:13px}
-@media (max-width:760px){.topbar .tb-left .it.addr{display:none}}
+@media (max-width:760px){.topbar .tb-left .it.addr{display:none}.topbar .tb-right>span{display:none}}
 
 .nav{
   position:sticky;top:0;z-index:55;
@@ -594,7 +594,7 @@ h1,h2,h3,h4{font-family:var(--disp);margin:0;line-height:1;letter-spacing:-.02em
 .foot .contact{font-size:14.5px;line-height:1.75;color:rgba(255,255,255,.6);font-style:normal}
 .foot .contact b{color:rgba(255,255,255,.82);font-weight:600}
 .news{display:flex;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:5px;margin-top:16px}
-.news input{flex:1;background:none;border:none;outline:none;color:#fff;font-family:var(--body);font-size:14px;padding:11px 15px}
+.news input{flex:1;min-width:0;background:none;border:none;outline:none;color:#fff;font-family:var(--body);font-size:14px;padding:11px 15px}
 .news input::placeholder{color:rgba(255,255,255,.45)}
 .news button{background:var(--orange);color:#3a2200;border:none;border-radius:6px;padding:0 20px;font-weight:800;font-size:13.5px;letter-spacing:.04em}
 .foot-bot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding-block:26px;font-size:12.5px;color:rgba(255,255,255,.5)}
@@ -638,6 +638,7 @@ h1,h2,h3,h4{font-family:var(--disp);margin:0;line-height:1;letter-spacing:-.02em
   .foot-top{grid-template-columns:1fr}
   .nav-cta .btn{display:none}
   .hero-actions .btn{flex:1;justify-content:center}
+  .hero h1.display{font-size:clamp(33px,8.5vw,46px)}
   .stat-grid{grid-template-columns:1fr}
   .stat + .stat{border-left:none;border-top:1px solid var(--line)}
 }
